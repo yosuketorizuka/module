@@ -1,18 +1,27 @@
-class my_funcClass:
+import pandas as pd
 
-#    def __init__(self, x,y):
-#        self.x = x
-#        self.y = y
+class readFileClass():
 
-    def my_sum(self, x, y):
-        self.x = x
-        self.y = y
+    df_in = pd.DataFrame()
 
-        z = self.x + self.y
-        return z
+    def setPara(self, filepath, filename):
+        self.filepath = filepath
+        self.filename = filename
 
-    def my_dif(self, x,y):
-        self.x = x
-        self.y = y
-        z = x - y
-        return z
+    def readFile(self):
+
+        # CSVファイルを読み込み
+        df_in = pd.read_csv(self.filepath + self.filename)
+        return df_in
+
+class writeFileClass():
+
+    df_out = pd.DataFrame()
+
+    def setPara(self, filepath, filename, df_out):
+        self.filepath = filepath
+        self.filename = filename
+        self.df_out = df_out
+
+    def writeFile(self):
+        self.df_out.to_csv(self.filepath + self.filename, index=False)
