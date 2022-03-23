@@ -3,8 +3,8 @@
 from pydoc import importfile
 import pandas as pd
 import csv
-from myModules import  zzModules
-import myModules
+from zzModules import  zzModules
+import zzModules
 
 importFilePath = r'import/'
 importFileName = r'import.csv'
